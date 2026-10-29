@@ -567,7 +567,7 @@ h2 {
   .nav-cta-mobile { display: inline-flex; }
 
   .hero { min-height: 520px; }
-  .hero-panel { width: 100%; clip-path: none; background: linear-gradient(180deg, rgba(8, 28, 64, 0.92), rgba(10, 42, 90, 0.65)); }
+  .hero-panel { width: 100%; clip-path: none; background: linear-gradient(180deg, rgba(8, 28, 64, 0.82), rgba(10, 42, 90, 0.15)); }
   .hero-line { display: none; }
 
   .about { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
@@ -725,21 +725,20 @@ h2 {
   /* ================= HERO (sunny photo, no blue) ================= */
   .hero {
     align-items: flex-start;
-    min-height: 100svh;
+    min-height: 60svh;
     background: #bcd8f2;
-    .hero-panel { width: 100%; clip-path: none; background: linear-gradient(180deg, rgba(8, 28, 64, 0.72), rgba(10, 42, 90, 0.25)); }
   }
   .hero-bg {
     position: absolute;
     inset: 0;
-    transform: none !important;      /* no parallax on phones */
+    transform: none !important;
     background: url("/images/hero1.png") center bottom / cover no-repeat;
   }
   .hero-photo { display: none; }
   .hero-panel {
     width: 100%;
     clip-path: none;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 48%);
+    background: linear-gradient(180deg, rgba(8, 28, 64, 0.72), rgba(10, 42, 90, 0.25));
   }
   .hero-line, .hero-shine, .scroll-cue { display: none; }
 
@@ -851,3 +850,33 @@ h2 {
   .hero h1 { font-size: 36px; }
   .focus-item { flex-basis: 86%; }
 }
+
+/* ---------- Anti-shake fixes ---------- */
+html, body {
+  overflow-x: clip;          /* stops sideways drift on iOS/Android */
+  max-width: 100%;
+}
+
+.focus-grid {
+  overscroll-behavior-x: contain;   /* swiping cards won't drag the page */
+}
+
+/* hover lift only on real mouse devices (touch "sticky hover" causes jumps) */
+@media (hover: none) {
+  .btn:hover,
+  .process-grid li:hover .icon-box { transform: none; }
+  .focus-item:hover .focus-photo > img { transform: none; }
+}
+
+@media (max-width: 960px) {
+  /* backdrop blur re-renders every scroll frame on phones and flickers */
+  .nav.is-solid,
+  .nav.is-open { backdrop-filter: none; background: rgba(10, 30, 66, 0.98); }
+  .nav { transition: background-color 0.3s ease, box-shadow 0.3s ease; }  /* no padding animation */
+}
+
+@media (max-width: 600px) {
+  .hero-actions .btn-outline { backdrop-filter: none; }
+}
+
+.hero-line { display: none !important; }

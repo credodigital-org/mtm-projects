@@ -35,12 +35,12 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Services />
-        <WhyChoose />
         <Focus />
-        <Process />
         <CtaBanner />
+        <Process />
+        <WhyChoose />
+        <About />
       </main>
       <Footer />
       <FloatingActions />
