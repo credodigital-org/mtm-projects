@@ -20,7 +20,7 @@ import {
 /* Put your photos in /public/images using these names.
    If a file is missing, a styled placeholder is shown instead. */
 export const IMG = {
-  hero: "/images/hero.png",
+  hero: "/images/hero4.png",
   about: "/images/about-building.png",
   villa: "/images/focus-villa.png",
   office: "/images/focus-office.png",

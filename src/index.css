@@ -725,14 +725,14 @@ h2 {
   /* ================= HERO (sunny photo, no blue) ================= */
   .hero {
     align-items: flex-start;
-    min-height: 60svh;
+    min-height: 70svh;
     background: #bcd8f2;
   }
   .hero-bg {
     position: absolute;
     inset: 0;
     transform: none !important;
-    background: url("/images/hero1.png") center bottom / cover no-repeat;
+    background: url("/images/mobile-hero.jpeg") center bottom / cover no-repeat;
   }
   .hero-photo { display: none; }
   .hero-panel {
@@ -880,3 +880,289 @@ html, body {
 }
 
 .hero-line { display: none !important; }
+
+
+/* ==========================================
+   MOBILE HERO — MATCHES DESIGN MOCKUP
+========================================== */
+@media (max-width: 600px) {
+
+  /* ---------- Header ---------- */
+  .nav-inner { gap: 12px; }
+  .nav:not(.is-solid):not(.is-open) .logo { background: transparent; }
+  .nav:not(.is-solid):not(.is-open) .nav-toggle { color: #fff; }   /* white burger */
+
+  .nav-cta {
+    display: inline-flex;
+    margin-left: auto;
+    min-height: 0;
+    padding: 8px 20px;
+    background: var(--amber-2);
+    color: #1a1405;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .nav-toggle { margin-left: 0; margin-right: -10px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 90svh;
+    align-items: flex-start;
+    background: #0d3470;
+  }
+  .hero-bg {
+    background: url("/images/mobile-hero.jpeg") center bottom / cover no-repeat;
+  }
+
+  /* blue sky at top, clear in the middle, navy at the bottom for the stats */
+  .hero-panel {
+    width: 100%;
+    clip-path: none;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 42, 90, 0.85) 0%,
+      rgba(13, 52, 112, 0.55) 35%,
+      rgba(13, 52, 112, 0) 55%,
+      rgba(10, 42, 90, 0.2) 75%,
+      rgba(8, 28, 64, 0.95) 100%
+    );
+  }
+
+  .hero-content {
+    padding-top: 150px;
+    padding-bottom: 150px;     /* room for the stats row */
+  }
+
+  .hero-kicker {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    margin-bottom: 14px;
+  }
+  .hero-kicker::before { flex: 0 0 28px; height: 2px; background: var(--amber-2); }
+
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(34px, 9.6vw, 52px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  .hero h1 em { color: var(--amber-2); }
+
+  .hero-text {
+    max-width: 290px;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-actions { margin-top: 24px; }
+  .hero-actions .btn {
+    width: auto;
+    max-width: none;
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+  .hero-actions .btn-outline { display: none; }   /* mockup shows only "Our Services" */
+
+  /* ---------- Stats row ---------- */
+  .hero-stats {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 22px 18px calc(26px + env(safe-area-inset-bottom, 0px));
+  }
+  .hero-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.35);
+  }
+  .hero-stats > div:first-child { border-left: 0; padding-left: 0; }
+  .hero-stats b {
+    color: var(--amber-2);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .hero-stats span {
+    color: #fff;
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+}
+
+/* stats are mobile-only */
+@media (min-width: 601px) {
+  .hero-stats { display: none; }
+}
+
+@media (max-width: 360px) {
+  .hero-stats b { font-size: 19px; }
+  .hero-stats span { font-size: 10.5px; }
+  .nav-cta { padding: 6px 16px; }
+}
+
+@media (max-width: 960px) {
+  /* show the pill next to the burger instead of hiding it */
+  .nav .nav-cta {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .nav-inner { gap: 12px; }
+  .nav-toggle { margin-left: 0; margin-right: -10px; }
+
+  /* the copy inside the dropdown is no longer needed */
+  .nav-cta-mobile { display: none; }
+}
+
+@media (max-width: 600px) {
+  .nav:not(.is-solid):not(.is-open) .logo { background: transparent; }
+  .nav:not(.is-solid):not(.is-open) .nav-toggle { color: #fff; }  /* white burger, matches mockup */
+
+  .nav .nav-cta {
+    min-height: 0;
+    padding: 6px 14px;
+    background: var(--amber-2);
+    color: #1a1405;
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE — RESPONSIVE FIXES
+   (320px – 480px, plus short landscape phones)
+   Keep this at the VERY END of the stylesheet.
+========================================== */
+
+@media (max-width: 480px) {
+
+  .container, .nav-inner { padding-left: 16px; padding-right: 16px; }
+
+  /* ---------- Nav ---------- */
+  .nav-inner { gap: 8px; }
+  .logo { transform: scale(0.92); transform-origin: left center; }
+  .nav .nav-cta {
+    min-height: 36px;
+    padding: 8px 14px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { min-height: 560px; }
+  .hero-content { padding-top: 124px; padding-bottom: 130px; }
+  .hero h1 { font-size: clamp(30px, 9.4vw, 40px); max-width: 100%; }
+  .hero-text { max-width: 100%; font-size: 14.5px; }
+  .hero-kicker { font-size: 11px; letter-spacing: 1.8px; }
+
+  /* stats row */
+  .hero-stats { padding: 16px 16px calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .hero-stats > div { padding: 0 8px; }
+  .hero-stats b { font-size: 19px; }
+  .hero-stats span { font-size: 10.5px; }
+
+  /* ---------- Sections ---------- */
+  h2 { font-size: clamp(24px, 7vw, 28px); }
+  .about, .services, .why, .focus, .process { padding-left: 16px; padding-right: 16px; }
+  .about-text p,
+  .services-intro p,
+  .why-intro p,
+  .focus-intro p,
+  .process-intro p { font-size: 14px; line-height: 1.7; }
+
+  /* grids: 2 columns, tighter gaps */
+  .services-grid, .process-grid { gap: 10px 8px; }
+  .services-grid li { padding: 16px 6px; }
+  .services-grid b, .why-grid b { font-size: 12.5px; }
+  .why-grid li { padding: 4px 8px; }
+
+  /* focus cards */
+  .focus-item { flex-basis: 84%; }
+
+  /* process */
+  .process-checks { gap: 8px 16px; }
+  .icon-box { width: 52px; height: 52px; }
+
+  /* CTA */
+  .cta { padding: 44px 0; }
+  .cta h2 { font-size: clamp(24px, 7vw, 30px); }
+
+  /* ---------- Footer ---------- */
+  .footer-contact li { font-size: 12.5px; padding: 10px; }
+  .footer-address span:not(.pin) { font-size: 12.5px; }
+}
+
+/* ---------- 380px and below (iPhone SE / mini, small Androids) ---------- */
+@media (max-width: 380px) {
+  .logo { transform: scale(0.85); }
+  .nav .nav-cta { padding: 7px 10px; font-size: 10px; }
+
+  .hero { min-height: 540px; }
+  .hero-content { padding-top: 116px; padding-bottom: 120px; }
+  .hero h1 { font-size: 31px; letter-spacing: -0.8px; }
+  .hero-text { font-size: 14px; }
+  .hero-actions .btn { padding: 6px 16px; font-size: 13px; }
+
+  .hero-stats b { font-size: 17px; }
+  .hero-stats span { font-size: 10px; }
+
+  .focus-item { flex-basis: 88%; }
+  .footer-links a { padding: 8px 12px; font-size: 11.5px; }
+}
+
+/* ---------- 340px and below (very narrow) ---------- */
+@media (max-width: 340px) {
+  .container, .nav-inner { padding-left: 12px; padding-right: 12px; }
+  .nav .nav-cta { padding: 6px 10px; font-size: 10px; }
+  .hero h1 { font-size: 28px; }
+  .hero-stats > div { padding: 0 6px; }
+  .hero-stats b { font-size: 15px; }
+  .hero-stats span { font-size: 9.5px; }
+  .why-grid, .services-grid, .process-grid { gap: 14px 6px; }
+}
+
+/* ---------- Short landscape phones ---------- */
+@media (max-width: 960px) and (max-height: 480px) and (orientation: landscape) {
+  .hero { min-height: 100svh; }
+  .hero-content { padding-top: 84px; padding-bottom: 70px; }
+  .hero h1 { font-size: 30px; }
+  .hero-stats { display: none; }
+  .nav-links { max-height: calc(100svh - 64px); overflow-y: auto; }
+}
+
+/* ==========================================
+   HERO LEFT SHADE — DESKTOP (matches mockup)
+========================================== */
+@media (min-width: 961px) {
+  .hero-panel {
+    inset: 0;
+    width: 100%;
+    clip-path: none;
+    background:
+      /* left navy fade, dissolving into the photo */
+      linear-gradient(
+        90deg,
+        rgba(8, 28, 64, 0.96) 0%,
+        rgba(10, 42, 90, 0.88) 22%,
+        rgba(10, 42, 90, 0.6) 40%,
+        rgba(10, 42, 90, 0.22) 58%,
+        rgba(10, 42, 90, 0) 75%
+      ),
+      /* soft dark tint at the bottom edge */
+      linear-gradient(
+        0deg,
+        rgba(8, 28, 64, 0.55) 0%,
+        rgba(8, 28, 64, 0) 30%
+      );
+  }
+}
