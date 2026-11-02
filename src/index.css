@@ -1166,3 +1166,50 @@ html, body {
       );
   }
 }
+
+/* ==========================================
+   FOCUS CAROUSEL — STOP UP/DOWN MOVEMENT
+========================================== */
+
+/* images: fixed box so nothing jumps when they load */
+.focus-photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.45 / 1;
+  contain: paint;                 /* zoom can never spill out */
+  transform: translateZ(0);       /* own layer, no repaint jitter */
+}
+.focus-photo > img,
+.focus-photo > .photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .focus-grid {
+    overflow-x: auto;
+    overflow-y: hidden;           /* kills the hidden vertical scroll */
+    touch-action: pan-x pan-y;    /* no diagonal capture; page still scrolls vertically */
+    overscroll-behavior: contain; /* was only X before */
+    padding-bottom: 0;            /* removes the 6px that allowed vertical scroll */
+    align-items: flex-start;      /* cards don't stretch/shift in height */
+  }
+
+  .focus-item {
+    flex: 0 0 78%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;     /* one card per swipe, no overshoot */
+  }
+
+  /* no zoom animation on phones */
+  .focus-photo > img { transition: none; transform: none !important; }
+}
+
+@media (max-width: 480px) {
+  .focus-item { flex-basis: 84%; }
+}

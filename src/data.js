@@ -21,10 +21,10 @@ import {
    If a file is missing, a styled placeholder is shown instead. */
 export const IMG = {
   hero: "/images/hero4.png",
-  about: "/images/about-building.png",
-  villa: "/images/focus-villa.png",
-  office: "/images/focus-office.png",
-  maintenance: "/images/focus-maintenance.png",
+  about: "/images/about-building2.png",
+  villa: "/images/villa-projects.png",
+  office: "/images/office-projects.png",
+  maintenance: "/images/general-maintenance.png",
   cta: "/images/cta.jpeg",
 };
 
