@@ -3,14 +3,15 @@ import { Phone, MessageCircle, Mail, AtSign, Globe, MapPin } from "lucide-react"
 import Logo from "./Logo.jsx";
 import { EASE, stagger } from "./anim.jsx";
 import { CONTACT } from "../data.js";
+import { Link } from "../router.jsx";
 
 const QUICK = [
-  ["Home", "#home"],
-  ["About Us", "#about"],
-  ["Services", "#services"],
-  ["Project", "#focus"],
-  ["Careers", "#contact"],
-  ["Contact", "#contact"],
+  ["Home", "/"],
+  ["About Us", "/about"],
+  ["Services", "/services"],
+  ["Project", "/focus"],
+  ["Careers", "/#contact"],
+  ["Contact", "/#contact"],
 ];
 
 const col = {
@@ -38,7 +39,7 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             {QUICK.map(([label, href]) => (
-              <li key={label}><a href={href}>{label}</a></li>
+              <li key={label}><Link to={href}>{label}</Link></li>
             ))}
           </ul>
         </motion.div>

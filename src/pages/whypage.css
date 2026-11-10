@@ -1,0 +1,137 @@
+/* ==========================================
+   WHY CHOOSE US PAGE  (all classes prefixed wp-)
+========================================== */
+
+/* ---------- Hero ---------- */
+.wp-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(660px, 62vh, 620px);
+  padding: 120px 0 80px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.wp-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wp-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 18, 28, 0.78) 0%, rgba(14, 18, 28, 0.55) 60%, rgba(14, 18, 28, 0.4) 100%);
+}
+
+.wp-hero .container { position: relative; z-index: 1; }
+.wp-hero-content { padding-left: clamp(0px, 3vw, 60px); }
+
+.wp-hero h1 {
+  color: #fff;
+  font-size: clamp(34px, 4.6vw, 50px);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.8px;
+}
+.wp-hero h1 em { display: block; color: var(--amber); font-style: normal; }
+.wp-h1-line { display: block; }
+
+.wp-hero-text {
+  max-width: 480px;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- Intro ---------- */
+.wp-intro { padding: 56px 0 70px; background: #fff; text-align: center; }
+.wp-label {
+  margin-bottom: 14px;
+  color: #a8750a;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.wp-intro h2 { color: var(--navy); font-size: clamp(30px, 3.8vw, 46px); letter-spacing: -1.2px; }
+.wp-intro-text { max-width: 640px; margin: 20px auto 0; color: var(--muted); font-size: 14.5px; line-height: 1.8; }
+
+/* ---------- Reasons ---------- */
+.wp-reasons { padding: 60px 0; background: var(--gray); }
+.wp-panel {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.wp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 80px 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wp-grid li { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.wp-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
+  border: 1px solid #fbefd0;
+  border-radius: 50%;
+  background: #fffaf0;
+  color: var(--amber);
+}
+.wp-grid h3 { color: var(--ink); font-size: 16px; font-weight: 700; }
+.wp-grid p { max-width: 230px; margin-top: 10px; color: var(--muted); font-size: 12.5px; line-height: 1.7; }
+
+/* ---------- Trust ---------- */
+.wp-trust { background: #fff; }
+.wp-trust-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 14px 14px 14px 8px;
+  border-radius: 24px;
+  background: #f4f6fa;
+}
+
+.wp-trust-photo {
+  width: 100%;
+  aspect-ratio: 16 / 12;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.wp-trust-photo.photo-fallback { height: auto; }
+
+.wp-trust-text { max-width: 520px; padding: 20px 20px 20px 0; }
+.wp-quote { color: var(--amber); }
+.wp-trust-text h2 { margin-top: 16px; color: var(--navy); font-size: clamp(30px, 3.4vw, 42px); letter-spacing: -1px; }
+.wp-trust-text p { margin: 22px 0 30px; color: var(--muted); font-size: 15.5px; line-height: 1.75; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .wp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 24px; }
+  .wp-panel { padding: 56px 24px; }
+  .wp-trust-inner { grid-template-columns: 1fr; gap: 28px; padding: 14px; }
+  .wp-trust-text { padding: 0 10px 20px; }
+}
+
+@media (max-width: 600px) {
+  .wp-hero { padding: 110px 0 56px; }
+  .wp-hero-content { padding-left: 0; }
+  .wp-intro { padding: 44px 0 48px; }
+  .wp-reasons { padding: 28px 0; }
+  .wp-grid { grid-template-columns: 1fr; gap: 44px; }
+  .wp-panel { padding: 44px 18px; }
+}
