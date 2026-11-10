@@ -1,0 +1,224 @@
+/* ==========================================
+   ABOUT US PAGE  (all classes prefixed ap-)
+========================================== */
+
+/* ---------- Hero ---------- */
+.ap-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(660px, 62vh, 620px);
+  padding: 130px 0 70px;
+  overflow: hidden;
+  background: var(--navy);
+  text-align: center;
+}
+
+.ap-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ap-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 20, 44, 0.55) 0%, rgba(8, 20, 44, 0.25) 40%, rgba(8, 20, 44, 0.55) 100%);
+}
+
+.ap-hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+
+.ap-kicker {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.ap-kicker b { margin: 0 8px; color: #fff; font-weight: 400; opacity: 0.8; }
+
+.ap-hero h1 {
+  margin-top: 22px;
+  color: #fff;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.ap-hero h1 em { display: block; color: var(--amber); font-style: normal; }
+.ap-h1-line { display: block; }
+
+.ap-hero-text {
+  max-width: 520px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ---------- Shared bits ---------- */
+.ap-label {
+  margin-bottom: 14px;
+  color: #a8750a;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.ap-label-amber { color: var(--amber); }
+
+.ap-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.ap-eyebrow i { width: 20px; height: 2px; background: var(--amber); }
+
+.ap-panel {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.14);
+}
+
+.ap-band { padding: 48px 0; }
+.ap-band-gray { background: var(--gray); }
+.ap-band-dark { background: var(--ink); }
+
+/* ---------- Who we are ---------- */
+.ap-who { padding: 80px 0 72px; background: #fff; text-align: center; }
+.ap-who h2 { color: var(--navy); font-size: clamp(28px, 3.4vw, 42px); letter-spacing: -1px; }
+.ap-who-text {
+  max-width: 880px;
+  margin: 22px auto 0;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+/* ---------- Values ---------- */
+.ap-values {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) 2.4fr;
+  align-items: center;
+  gap: 40px;
+  padding: 64px 28px 64px 22px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.ap-values-intro { padding-left: 4px; }
+.ap-values-intro h2 { color: var(--navy); font-size: clamp(26px, 2.6vw, 32px); }
+.ap-values-intro p:last-child { max-width: 280px; margin-top: 14px; color: var(--muted); font-size: 13.5px; line-height: 1.7; }
+
+.ap-values-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.ap-values-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 14px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(10, 42, 90, 0.05);
+  text-align: center;
+}
+.ap-value-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: #fff3d6;
+  color: var(--amber);
+}
+.ap-values-grid b { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.ap-values-grid small { margin-top: 6px; max-width: 120px; color: #8a8f98; font-size: 11px; line-height: 1.5; }
+
+/* ---------- Team ---------- */
+.ap-team {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 48px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 38px 40px 38px 24px;
+}
+
+.ap-team-media { position: relative; }
+.ap-team-frame {
+  position: absolute;
+  top: 12px;
+  right: -14px;
+  bottom: -12px;
+  left: 14px;
+  border-radius: 20px;
+  background: #fbf2cc;
+}
+.ap-team-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+}
+
+.ap-team-text h2 { color: var(--navy); font-size: clamp(26px, 2.8vw, 34px); }
+.ap-team-text p:last-child { margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* ---------- Workflow ---------- */
+.ap-flow { max-width: 1100px; margin: 0 auto; padding: 48px 20px 28px; }
+.ap-flow-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
+.ap-flow-head .ap-label { margin-bottom: 8px; }
+.ap-flow-head h2 { color: var(--navy); font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -1.2px; }
+.ap-flow-head p:last-child { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+.ap-flow-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.ap-flow-grid li {
+  padding: 16px 16px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafbfc;
+}
+.ap-flow-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.ap-flow-photo.photo-fallback { height: auto; }
+.ap-flow-num { display: block; margin-top: 14px; color: var(--amber); font-size: 21px; font-weight: 700; line-height: 1; }
+.ap-flow-grid h3 { margin-top: 8px; color: var(--navy); font-size: 14.5px; font-weight: 700; line-height: 1.3; }
+.ap-flow-grid p { margin-top: 8px; color: var(--muted); font-size: 11.5px; line-height: 1.6; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .ap-values { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px; }
+  .ap-values-intro p:last-child { max-width: 520px; }
+  .ap-flow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .ap-team { grid-template-columns: 1fr; gap: 40px; padding: 24px 24px 32px; }
+  .ap-team-frame { right: -8px; left: 8px; }
+}
+
+@media (max-width: 600px) {
+  .ap-hero { padding: 120px 0 56px; }
+  .ap-who { padding: 56px 0 48px; }
+  .ap-band { padding: 28px 0; }
+  .ap-values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ap-flow { padding: 36px 14px 18px; }
+  .ap-flow-grid { grid-template-columns: 1fr; }
+}

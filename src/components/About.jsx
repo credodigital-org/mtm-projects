@@ -4,6 +4,7 @@ import Photo from "./Photo.jsx";
 import { Words, Eyebrow, EASE } from "./anim.jsx";
 import Reveal from "./Reveal.jsx";
 import { IMG } from "../data.js";
+import { Link } from "../router.jsx";
 
 export default function About() {
   const reduce = useReducedMotion();
@@ -72,9 +73,9 @@ export default function About() {
                 </p>
               </Reveal>
               <Reveal delay={0.55}>
-                <a href="#services" className="btn btn-amber btn-shimmer">
+                <Link to="/about" className="btn btn-amber btn-shimmer">
                   Learn More <ArrowRight size={14} />
-                </a>
+                </Link>
               </Reveal>
             </div>
           </div>

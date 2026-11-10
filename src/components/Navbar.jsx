@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo.jsx";
 import { useIntro, EASE } from "./anim.jsx";
+import { Link, useLocation } from "../router.jsx";
 import { NAV } from "../data.js";
 
 export default function Navbar() {
@@ -10,23 +11,27 @@ export default function Navbar() {
   const ready = useIntro();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("#home");
+  const { pathname } = useLocation();
+  const onPage = pathname !== "/"; // e.g. /about: the page itself is the active link
+  const [section, setSection] = useState("home");
 
   useEffect(() => {
-    const ids = NAV.map((n) => n.href.slice(1));
+    const ids = NAV.map((n) => n.section).filter(Boolean);
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      let current = "#home";
+      let current = "home";
       ids.forEach((id) => {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= 140) current = `#${id}`;
+        if (el && el.getBoundingClientRect().top <= 140) current = id;
       });
-      setActive(current);
+      setSection(current);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
+
+  const isActive = (n) => (onPage ? n.to === pathname : n.section === section);
 
   return (
     <motion.header
@@ -40,26 +45,26 @@ export default function Navbar() {
 
         <nav className="nav-links" aria-label="Main">
           {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className={active === n.href ? "active" : ""}
+            <Link
+              key={n.to}
+              to={n.to}
+              className={isActive(n) ? "active" : ""}
               onClick={() => setOpen(false)}
             >
               {n.label}
-              {active === n.href && (
+              {isActive(n) && (
                 <motion.span layoutId="nav-underline" className="nav-underline" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
               )}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="btn btn-amber nav-cta-mobile" onClick={() => setOpen(false)}>
+          <Link to="/#contact" className="btn btn-amber nav-cta-mobile" onClick={() => setOpen(false)}>
             Contact Us
-          </a>
+          </Link>
         </nav>
 
-        <a href="#contact" className="btn btn-amber btn-shimmer nav-cta">
+        <Link to="/#contact" className="btn btn-amber btn-shimmer nav-cta">
           Contact Us
-        </a>
+        </Link>
 
         <button
           className="nav-toggle"

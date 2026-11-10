@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Photo from "./Photo.jsx";
 import { Words, useIntro, EASE } from "./anim.jsx";
 import { IMG } from "../data.js";
+import { Link } from "../router.jsx";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -71,9 +72,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div className="hero-actions" {...rise(1.05)}>
-              <a href="#services" className="btn btn-amber btn-shimmer">
+              <Link to="/services" className="btn btn-amber btn-shimmer">
                 Our Services <ArrowRight size={14} />
-              </a>
+              </Link>
               <a href="#contact" className="btn btn-outline">
                 Request a consultation
               </a>
