@@ -10,8 +10,8 @@ const QUICK = [
   ["About Us", "/about"],
   ["Services", "/services"],
   ["Project", "/focus"],
-  ["Careers", "/#contact"],
-  ["Contact", "/#contact"],
+  ["Careers", "/contact"],
+  ["Contact", "/contact"],
 ];
 
 const col = {

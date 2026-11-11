@@ -57,12 +57,12 @@ export default function Navbar() {
               )}
             </Link>
           ))}
-          <Link to="/#contact" className="btn btn-amber nav-cta-mobile" onClick={() => setOpen(false)}>
+          <Link to="/contact" className="btn btn-amber nav-cta-mobile" onClick={() => setOpen(false)}>
             Contact Us
           </Link>
         </nav>
 
-        <Link to="/#contact" className="btn btn-amber btn-shimmer nav-cta">
+        <Link to="/contact" className="btn btn-amber btn-shimmer nav-cta">
           Contact Us
         </Link>
 
