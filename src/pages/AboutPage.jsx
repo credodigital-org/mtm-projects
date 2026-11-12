@@ -160,7 +160,7 @@ import Reveal from "../components/Reveal.jsx";
 import { Words, EASE, stagger, rise } from "../components/anim.jsx";
 import { Wipe, LineEyebrow } from "../components/pageAnim.jsx";
 import { ABOUT_PAGE as A } from "../data.js";
-import "./aboutpage.css";
+import "./AboutPage.css";
 
 const SHADE =
   "linear-gradient(180deg, rgba(8,20,44,0.55) 0%, rgba(8,20,44,0.25) 40%, rgba(8,20,44,0.55) 100%)";
