@@ -1,0 +1,288 @@
+/* ==========================================
+   CONTACT PAGE  (all classes prefixed cp-)
+========================================== */
+
+/* ---------- Hero ---------- */
+.cp-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(660px, 70vh, 700px);
+  padding: 120px 0 80px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.cp-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cp-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 18, 28, 0.78) 0%, rgba(14, 18, 28, 0.5) 50%, rgba(14, 18, 28, 0.12) 100%);
+}
+
+.cp-hero .container { position: relative; z-index: 1; }
+.cp-hero-content { padding-left: clamp(0px, 3vw, 60px); }
+
+.cp-kicker {
+  margin-bottom: 26px;
+  color: var(--amber);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.cp-hero h1 {
+  color: #fff;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+.cp-hero h1 em { display: block; color: var(--amber); font-style: normal; }
+.cp-h1-line { display: block; }
+
+.cp-hero-text {
+  max-width: 440px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- Shared ---------- */
+.cp-label {
+  margin-bottom: 12px;
+  color: #a8750a;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* ---------- Form + details ---------- */
+.cp-main { padding: 80px 0 90px; background: var(--gray); }
+.cp-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: start;
+  gap: 56px;
+  max-width: 1280px;
+}
+
+.cp-form-card {
+  padding: 40px 40px 42px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(10, 42, 90, 0.1);
+}
+.cp-form-card h2 { color: var(--navy); font-size: clamp(30px, 3.4vw, 42px); line-height: 1.05; letter-spacing: -1.2px; }
+.cp-form-text { margin: 14px 0 26px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+.cp-form { display: grid; gap: 14px; }
+.cp-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.cp-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--amber);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cp-field:focus-within {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245, 163, 0, 0.18);
+}
+.cp-field svg { flex: none; }
+
+.cp-field input,
+.cp-field select,
+.cp-field textarea {
+  width: 100%;
+  height: 46px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.cp-field input::placeholder,
+.cp-field textarea::placeholder { color: #8a8f98; opacity: 1; }
+
+.cp-field-select select {
+  padding-right: 28px;
+  appearance: none;
+  cursor: pointer;
+}
+.cp-field-select select:required:invalid { color: #8a8f98; }
+.cp-chevron { position: absolute; right: 16px; color: var(--ink); pointer-events: none; }
+
+.cp-field-area { align-items: flex-start; padding-top: 15px; }
+.cp-field-area textarea { height: auto; min-height: 96px; padding: 0 0 12px; line-height: 1.6; resize: vertical; }
+
+.cp-submit {
+  width: 100%;
+  margin-top: 10px;
+  padding: 17px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+}
+.cp-status { min-height: 20px; color: #1c7a3e; font-size: 12.5px; line-height: 1.5; text-align: center; }
+
+/* details */
+.cp-details h2 { color: var(--navy); font-size: clamp(32px, 3.6vw, 44px); letter-spacing: -1.2px; }
+.cp-details-text { max-width: 340px; margin-top: 10px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+
+.cp-info { display: grid; gap: 22px; margin-top: 30px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.cp-info li { display: flex; align-items: flex-start; gap: 16px; }
+.cp-info-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d9e2f5;
+  border-radius: 50%;
+  background: #e8eefb;
+  color: var(--navy);
+}
+.cp-info-icon svg {
+    display: block;
+    width: 17;
+    height: 17;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    flex-shrink: 0;
+}
+.cp-info b { display: block; color: var(--navy); font-size: 15px; font-weight: 700; }
+.cp-info a,
+.cp-info span { display: block; margin-top: 3px; color: var(--ink); font-size: 14px; line-height: 1.45; }
+.cp-info a:hover { color: var(--navy); text-decoration: underline; }
+.cp-info .cp-note { color: var(--muted); font-size: 12.5px; }
+
+.cp-follow { margin-top: 26px; }
+.cp-follow b { display: block; color: var(--navy); font-size: 14px; font-weight: 700; }
+.cp-follow ul { display: flex; gap: 12px; margin-top: 14px; }
+.cp-follow a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.cp-follow a:hover { background: var(--amber); color: #1a1405; transform: translateY(-2px); }
+
+/* ---------- Map ---------- */
+.cp-map-section { padding: 70px 0 80px; background: #f7f9fc; }
+.cp-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  gap: 48px;
+  max-width: 1280px;
+}
+
+.cp-map-intro h2 { color: var(--navy); font-size: clamp(32px, 4vw, 48px); letter-spacing: -1.2px; }
+
+.cp-address { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+.cp-address-pin {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #e8eefb;
+  color: var(--amber);
+}
+.cp-address-pin svg {
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+.cp-address b { display: block; color: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.2px; }
+.cp-address span { display: block; color: var(--muted); font-size: 14px; }
+
+.cp-map {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #dfe5ee;
+  box-shadow: 0 8px 28px rgba(10, 42, 90, 0.14);
+}
+.cp-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.cp-map-card {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  max-width: min(340px, calc(100% - 100px));
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.cp-map-card p { display: flex; align-items: center; gap: 6px; color: var(--amber); font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+.cp-map-card b { display: block; margin-top: 4px; color: var(--navy); font-size: 19px; font-weight: 800; }
+.cp-map-card span { display: block; margin-top: 2px; color: var(--muted); font-size: 13.5px; }
+
+.cp-map-pills { position: absolute; right: 14px; bottom: 14px; left: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cp-coords {
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cp-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+.cp-open:hover { transform: translateY(-2px); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .cp-main-grid,
+  .cp-map-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cp-details-text { max-width: 520px; }
+}
+
+@media (max-width: 600px) {
+  .cp-hero { padding: 110px 0 56px; }
+  .cp-hero-content { padding-left: 0; }
+  .cp-main { padding: 48px 0 56px; }
+  .cp-form-card { padding: 26px 20px 28px; }
+  .cp-row2 { grid-template-columns: 1fr; }
+  .cp-map-section { padding: 48px 0 56px; }
+  .cp-map { height: 420px; }
+}

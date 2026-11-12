@@ -24,6 +24,11 @@ import {
   Settings,
   MapPin,
   Quote,
+  Phone,
+  Mail,
+  Linkedin,
+  Instagram,
+  Youtube,
 } from "lucide-react";
 
 /* Put your photos in /public/images using these names.
@@ -96,6 +101,7 @@ export const PROCESS = [
 export const ABOUT_PAGE = {
   hero: {
     image: "/images/about-hero.png",
+    mobileImage: "/images/about-hero-mobile.png",
     alt: "Abu Dhabi skyline at sunset",
     kicker: "Projects Management Company",
     location: "Abu Dhabi, UAE",
@@ -169,6 +175,7 @@ export const ABOUT_PAGE = {
 export const SERVICES_PAGE = {
   hero: {
     image: "/images/services-hero.png",
+    mobileImage: "/images/services-hero-mobile.png",
     alt: "Two engineers reviewing plans on a construction site",
     titleTop: "End-to-End",
     titleAccent: "Construction solutions",
@@ -261,6 +268,7 @@ export const SERVICES_PAGE = {
 export const FOCUS_PAGE = {
   hero: {
     image: "/images/focus-hero.png",
+    mobileImage: "/images/focus-hero-mobile.png",
     alt: "Modern villa with palm trees and the Dubai skyline behind",
     titleTop: "Building Dreams",
     titleAccent: "Across Every Space",
@@ -311,6 +319,7 @@ export const FOCUS_PAGE = {
 export const WHY_PAGE = {
   hero: {
     image: "/images/why-hero.png",
+    mobileImage: "/images/why-hero-mobile.png",
     alt: "Cranes and towers under construction in Dubai",
     titleTop: "Your Vision",
     titleAccent: "Our Commitment",
@@ -339,5 +348,79 @@ export const WHY_PAGE = {
     text: "With a focus on quality, innovation and client satisfaction, we are committed to turning your vision into reality.",
     button: "Get in Touch",
     href: `tel:${CONTACT.tel}`,
+  },
+};
+
+/* ==========================================
+   CONTACT US PAGE
+========================================== */
+export const CONTACT_PAGE = {
+  hero: {
+    image: "/images/contact-hero.png",
+    mobileImage: "/images/contact-hero-mobile.png",
+    alt: "Project coordinator taking a call at her desk with plans and a hard hat",
+    kicker: "Get in Touch",
+    titleTop: "Let’s Build",
+    titleAccent: "Your Next Project",
+    text: "Have a project in mind or need expert advice? Our team is here to help. Reach out to us and let’s turn your ideas into reality.",
+  },
+
+  form: {
+    eyebrow: "Send Us a Message",
+    title: "We'd Love to Hear from You",
+    text: "Fill out the form below and our team will get back to you as soon as possible.",
+    projectTypes: ["Villa Projects", "Office Projects", "General Maintenance", "Other / Not sure yet"],
+    button: "Send Message",
+    success: "WhatsApp opened with your message. Press send there and our team will reply soon.",
+  },
+
+  details: {
+    eyebrow: "Contact Details",
+    title: "Get in Touch",
+    text: "You can reach us through the details below. We're happy to assist you.",
+    items: [
+      {
+        icon: Phone,
+        title: "Phone",
+        href: "tel:+971501110586",
+        lines: ["+971 50 111 0586", "Mon – Sat, 8:00 AM – 6:00 PM"],
+      },
+      {
+        icon: Mail,
+        title: "Email",
+        href: `mailto:${CONTACT.email}`,
+        lines: [CONTACT.email, "We reply within 24 hours"],
+      },
+      {
+        icon: MapPin,
+        title: "Our Location",
+        lines: ["MTM Project Management", CONTACT.address],
+      },
+      {
+        icon: Clock,
+        title: "Business Hours",
+        lines: ["Mon – Sat: 9:00 AM – 6:00 PM", "Sunday: Closed"],
+      },
+    ],
+    followTitle: "Follow Us",
+    socials: [
+      { icon: Linkedin, label: "LinkedIn", href: "#" },
+      { icon: Instagram, label: "Instagram", href: `https://instagram.com/${CONTACT.instagram}` },
+      { icon: Youtube, label: "YouTube", href: "#" },
+    ],
+  },
+
+  map: {
+    eyebrow: "Our Location",
+    title: "Find Us On The Map",
+    name: "MTM PROJECT MANAGEMENT",
+    address: CONTACT.address,
+    landmarkLabel: "Location Landmark",
+    landmarkTitle: "MTM Dubai HQ",
+    landmarkText: "Sheikh Zayed Road, Downtown Dubai",
+    lat: 24.4539,
+    lng: 54.3773,
+    coords: "25.2048° N, 55.2708° E",
+    linkText: "Open in Google Maps",
   },
 };

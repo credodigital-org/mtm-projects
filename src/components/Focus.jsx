@@ -23,7 +23,7 @@ export default function Focus() {
               </h2>
               <Reveal delay={0.3}>
                 <p>A glimpse of the projects we've managed and delivered across Abu Dhabi and UAE.</p>
-                <a href="#contact" className="btn btn-ghost">
+                <a href="/services" className="btn btn-ghost">
                   View All <ArrowRight size={13} />
                 </a>
               </Reveal>
